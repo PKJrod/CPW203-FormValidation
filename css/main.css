@@ -1,0 +1,30 @@
+body {
+    margin: 0 auto;
+    width: 650px;
+    border: 4px dotted darkblue;
+}
+
+label {
+    float: left;
+    text-align: right;
+    width: 12em;
+    margin-right: 1.1em;
+}
+
+input {
+    margin-bottom: .6em;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    padding: .5em;
+    margin-left: 250px;
+    margin-top: 1em;
+}
+
+span {
+    color: red;
+}
