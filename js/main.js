@@ -20,12 +20,14 @@ function resetErrorMessages() {
     }
 }
 function isTextPresent(id, errMsg) {
-    var txtBox = document.getElementById("id");
+    var txtBox = document.getElementById(id);
     var txtBoxValue = txtBox.value;
     if (txtBoxValue == "") {
         var errSpan = txtBox.nextElementSibling;
-        errSpan.innerText = "errMsg";
+        errSpan.innerText = errMsg;
         return false;
     }
-    return true;
+    else {
+        return true;
+    }
 }

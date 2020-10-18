@@ -32,7 +32,7 @@ function resetErrorMessages():void {
             else {
                 currSpan.innerText = "";
             }
-            */ 
+            */
             currSpan.innerText = "";
         }
     }
@@ -47,15 +47,17 @@ function resetErrorMessages():void {
  */
 function isTextPresent(id:string, errMsg:string):boolean {
     let txtBox = 
-        <HTMLInputElement>document.getElementById("id");
+        <HTMLInputElement>document.getElementById(id);
     let txtBoxValue = txtBox.value;
     if( txtBoxValue == "" ) {
         let errSpan = 
             <HTMLSpanElement>txtBox.nextElementSibling;
-        errSpan.innerText = "errMsg";
+        errSpan.innerText = errMsg;
         return false;
     }
-    return true;
+    else {
+        return true;
+    }
 }
 
 /* might use this for more practice.
