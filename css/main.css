@@ -19,10 +19,22 @@ h1 {
     text-align: center;
 }
 
+h1, form label, form button, form input, form span {
+    font-family: 'Indie Flower', cursive;
+}
+
 form button {
     padding: .5em;
     margin-left: 50%;
     margin-top: 1em;
+    border-radius: .3em;
+    background-color: darkgray;
+    color: rgba(144, 79, 248, 0.986);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
 }
 
 form span {
