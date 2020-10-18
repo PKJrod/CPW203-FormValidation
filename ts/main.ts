@@ -6,9 +6,36 @@ window.onload = function(){
 }
 
 function main():void {
+    resetErrorMessages();
     // javascript does not care if we pass in two parameter however typescript does and will give an error
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
+}
+
+/**
+ * Resets all spans back to the default text
+ */
+function resetErrorMessages():void {
+    let allSpans = document.querySelectorAll("form span");
+    for( let i = 0; i < allSpans.length; i++ ) {
+        let currSpan = <HTMLElement>allSpans[i];
+
+        if(currSpan.hasAttribute("data-required")) {
+            currSpan.innerText = "*";
+        }
+        else {
+            /*
+            if(currSpan.hasAttribute("data-default-error")) {
+                let msg = currSpan.getAttribute("data-default-error");
+                currSpan.innerText = msg;
+            }
+            else {
+                currSpan.innerText = "";
+            }
+            */ 
+            currSpan.innerText = "";
+        }
+    }
 }
 
 /**
