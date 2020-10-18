@@ -11,12 +11,18 @@ function main():void {
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
 
-    // Validate date
+    // Validates date
+    CheckValidDate();
+}
+
+function CheckValidDate() {
     let dobBox = <HTMLInputElement>document.getElementById("dob");
     let dob = dobBox.value;
-    if(!isValidDate(dob)) {
-        let errSpan = dobBox.nextElementSibling;
-        errSpan.innerHTML = "Invalid format. Format should be mm/dd/yyyy";
+    if (!isValidDate(dob)) {
+        // let errSpan = dobBox.nextElementSibling;
+        // errSpan.innerHTML = "Invalid format. Format should be mm/dd/yyyy";
+        let errSpan = document.getElementById("dob-span");
+        errSpan.innerHTML = "Format should be mm/dd/yyyy";
     }
 }
 
