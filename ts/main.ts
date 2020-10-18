@@ -5,7 +5,38 @@ window.onload = function(){
     formBtn.onclick = main;
 }
 
+/**
+ * Change the message heading to a random color
+ * when it is clicked
+ */
+function changeHeading() {
+    let heading = <HTMLElement>this;
+    let red = Math.floor(Math.random() * 255 + 1);
+    let green = Math.floor(Math.random() * 255 + 1);
+    let blue = Math.floor(Math.random() * 255 + 1);
+    let color = "rgb(" + red + "," + green + "," +
+                    blue + ")";
+    console.log(color);
+    heading.style.color = color;
+    console.log(heading.style.color);
+}
+
 function main():void {
+    // adding a HTML element using TS/JS
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+    let msgHeading = document.createElement("h2");
+    msgHeading.innerText = "Processing form";
+    msgHeading.setAttribute("class", "message");
+    msgHeading.onclick = changeHeading;
+
+    let h1 = document.querySelector("h1");
+    h1.insertAdjacentElement("afterend", msgHeading);
+    
+    // https://www.w3schools.com/js/js_timing.asp
+    setTimeout(function() {
+        msgHeading.remove();
+    }, 20000)
+
     resetErrorMessages();
     // javascript does not care if we pass in two parameter however typescript does and will give an error
     isTextPresent("first-name", "First name is required");
