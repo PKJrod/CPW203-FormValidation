@@ -8,6 +8,7 @@ window.onload = function(){
 /**
  * Change the message heading to a random color
  * when it is clicked
+ * https://www.w3schools.com/jsref/jsref_random.asp
  */
 function changeHeading() {
     let heading = <HTMLElement>this;
