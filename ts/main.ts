@@ -36,7 +36,7 @@ function main():void {
     // https://www.w3schools.com/js/js_timing.asp
     setTimeout(function() {
         msgHeading.remove();
-    }, 20000)
+    }, 5000)
 
     resetErrorMessages();
     // javascript does not care if we pass in two parameter however typescript does and will give an error
